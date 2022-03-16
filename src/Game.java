@@ -16,14 +16,11 @@ public class Game {
         return naam;
     }
 
-    public double huidigeWaarde(){
-        int jaarDaling = LocalDate.now().getYear() - releaseJaar;
-        double procentDaling = jaarDaling * 30.0;
-        if (procentDaling > 100.0){
-            return 0.0;
-        }else{
-            return nieuwprijs * ((100-procentDaling)/100);
-        }
+    public double huidigeWaarde() {
+        int huidigeJaar = LocalDate.now().getYear();
+        double jaarVerschil = (huidigeJaar - releaseJaar);
+        double huidigePrijs = nieuwprijs * Math.pow(0.7, jaarVerschil);
+        return huidigePrijs;
     }
 
     public boolean equals(Object andereObject) {

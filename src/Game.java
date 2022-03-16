@@ -23,14 +23,15 @@ public class Game {
         return huidigePrijs;
     }
 
-    public boolean equals(Object andereObject) {
-        if (andereObject.equals(toString())) {
+    public boolean equals(Object andereObject){
+        if (andereObject.equals(toString())){
             return true;
-
-        } else {
+        }else{
             return false;
         }
     }
+
+
     public String toString() {
         return "\n" + naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) + " nu voor: €" + String.format("%.2f", huidigeWaarde());
     }

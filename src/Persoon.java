@@ -61,6 +61,19 @@ public class Persoon {
 
     }
 
+    public Game zoekGameOpNaam(String spelNaam) { // zoekGameOpNaam door Jayro
+        Game gevondenGame = null;
+        for (Game spel : mijnGames) {
+            if (spel.getNaam().equals(spelNaam)) {
+                gevondenGame = spel;
+
+            }
+
+        }
+        return gevondenGame;
+    }
+
+
     public String toString() {
         StringBuilder s = new StringBuilder(naam + " heeft een budget van €" + String.format("%.2f", getBudget()) + " en bezit de volgende games:");
         for (Game game : mijnGames){

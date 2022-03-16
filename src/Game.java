@@ -24,12 +24,16 @@ public class Game {
     }
 
     public boolean equals(Object andereObject) {
-        if (andereObject.equals(toString())) {
-            return true;
+        boolean gelijkeObjecten = false;
 
-        } else {
-            return false;
+        if (andereObject instanceof Game) {
+            Game andereGame = (Game) andereObject;
+
+            if (this.naam.equals(andereGame.naam) && this.releaseJaar == andereGame.releaseJaar ) {
+                gelijkeObjecten = true;
+            }
         }
+        return gelijkeObjecten;
     }
     public String toString() {
         return "\n" + naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) + " nu voor: €" + String.format("%.2f", huidigeWaarde());

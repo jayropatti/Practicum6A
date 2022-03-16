@@ -81,4 +81,13 @@ public class Persoon {
         }
         return s.toString();
     }
+
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> teKoop) { // Thom
+        for (Game game : teKoop) {
+            if (game.getNaam().equals(game.getNaam())) {
+                teKoop.remove(game);
+            }
+        }
+        return teKoop;
+    }
 }
